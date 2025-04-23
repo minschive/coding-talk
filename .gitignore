@@ -1,16 +1,5 @@
-# Compiled class file
+# === Java ===
 *.class
-
-# Log file
-*.log
-
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
 *.jar
 *.war
 *.nar
@@ -18,7 +7,65 @@
 *.zip
 *.tar.gz
 *.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+# === Logs ===
+*.log
+
+# === Maven ===
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# === Gradle (만약 Gradle도 병행한다면) ===
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# === Spring Tool Suite (STS) ===
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# === IntelliJ IDEA ===
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# === NetBeans ===
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# === VS Code ===
+.vscode/
+
+# === OS Files ===
+.DS_Store
+Thumbs.db
+
+# === Docker ===
+*.pid
+*.seed
+docker-compose.override.yml
+.env
+.env.*
+**/docker-data/
+**/mysql-data/
+**/mongo-data/
+
+# === MyBatis Mapper Configs (if generated) ===
+*.xml~  # temp backup files from IDEs
+
+# === Others ===
+HELP.md
