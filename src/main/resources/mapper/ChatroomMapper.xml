@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mycom.codingtalk.mapper.ChatroomMapper">
+    <insert id="insertChatroom" parameterType="com.mycom.codingtalk.entity.Chatroom" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO chatrooms (name)
+        VALUES (#{name})
+    </insert>
+
+    <select id="selectAllChatrooms" resultType="java.util.Map">
+        SELECT c.*, COUNT(rm.user_id) as member_count
+        FROM chatrooms c
+                 LEFT JOIN room_members rm ON c.id = rm.chatroom_id
+        GROUP BY c.id
+        ORDER BY c.created_at DESC
+    </select>
+
+    <select id="selectChatroomById" resultType="com.mycom.codingtalk.entity.Chatroom">
+        SELECT * FROM chatrooms WHERE id = #{chatroomId}
+    </select>
+
+</mapper>
