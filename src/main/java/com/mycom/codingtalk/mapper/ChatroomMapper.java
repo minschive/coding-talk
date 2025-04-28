@@ -1,6 +1,7 @@
 package com.mycom.codingtalk.mapper;
 
 import com.mycom.codingtalk.entity.Chatroom;
+import com.mycom.codingtalk.entity.RoomMember;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -14,5 +15,7 @@ public interface ChatroomMapper {
     List<Map<String, Object>> selectAllChatrooms();
 
     Chatroom selectChatroomById(@Param("chatroomId") Integer chatroomId);
+
+    void insertRoomMember(RoomMember member);
 
 }
